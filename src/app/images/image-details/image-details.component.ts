@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImageService } from '../image.service';
 import { Image } from '../Image';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   templateUrl: './image-details.component.html',
@@ -12,21 +11,12 @@ export class ImageDetailsComponent implements OnInit {
   pageTitle = "Image details";
   errorMessage = '';
   image!: Image;
-  imageForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,
-    private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
     private router: Router,
     private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.imageForm = this.fb.group({
-      albumId: [''],
-      title: [''],
-      url: [''],
-      thumbnailUrl: ['']
-    });
-
     const param = Number(this.route.snapshot.paramMap.get('id'));
     if (param) {
       const id = +param;
@@ -60,9 +50,7 @@ export class ImageDetailsComponent implements OnInit {
   }
 
   onSaveComplete(): void {
-    this.imageForm.reset();
     alert("The image was successfully deleted.");
     this.router.navigate(['/images']);
   }
-
 }

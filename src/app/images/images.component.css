@@ -17,12 +17,10 @@
 .card{
     border: 0 white;
     background-color: inherit;
+    height:100%;
 }
 .row{
     background-color: inherit;
-}
-.card{
-    height:100%;
 }
 .card-header{
     height:100%;

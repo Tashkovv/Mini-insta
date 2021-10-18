@@ -7,8 +7,7 @@
 
         <div class="card shadow-lg p-2 mb-2 bg-dark bg-gradient rounded">
 
-            <img class="card-img-top" *ngIf="image.thumbnailUrl" [routerLink]="['/images', image.id]"
-                [src]='image.thumbnailUrl'>
+            <img class="card-img-top" [routerLink]="['/images', image.id]" [src]='image.thumbnailUrl'>
 
             <div class="card-header text-light">
                 {{truncateTitle(image)}}
@@ -22,8 +21,6 @@
             (pageChange)="handlePageChange($event)"></pagination-controls>
     </div>
 </div>
-
-
 
 <div class="row d-flex justify-content-center" *ngIf='!images.length'>
     <div class="loader"></div>

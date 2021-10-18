@@ -16,9 +16,7 @@ export class ImagesComponent implements OnInit {
   pageSize = 44;
   count = 0;
 
-  constructor(private imageService: ImageService) {
-
-  }
+  constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
     this.getImages();
@@ -46,6 +44,4 @@ export class ImagesComponent implements OnInit {
       return image.title.substring(0, 44) + "...";
     else return image.title;
   }
-
 }
-
