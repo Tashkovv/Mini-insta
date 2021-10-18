@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from './image.service';
 import { Image } from './Image';
-import { HttpParams } from '@angular/common/http';
 
 @Component({
   templateUrl: './images.component.html',
