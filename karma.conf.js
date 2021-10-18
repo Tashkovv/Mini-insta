@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/micro-insta'),
+      dir: require('path').join(__dirname, './coverage/mini-insta'),
       subdir: '.',
       reporters: [
         { type: 'html' },

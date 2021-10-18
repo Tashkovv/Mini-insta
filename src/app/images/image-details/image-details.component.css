@@ -1,0 +1,14 @@
+.card{
+    border: 0 white;
+    background-color: inherit;
+}
+.row{
+    background-color: inherit;
+}
+.card-footer{
+    display:flex;
+    justify-content: space-around;
+}
+.box{
+    box-shadow: 1px white;
+}

@@ -1,0 +1,64 @@
+<div class="card text-light shadow-lg p-2 mb-2 bg-dark rounded">
+
+    <h5 class="card-header text-light fw-bold">
+        {{pageTitle}}
+    </h5>
+
+    <div class="card-body">
+        <form class="text-light" (ngSubmit)="saveImage()" [formGroup]="imageForm">
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="imageAlbumId">Album Id</label>
+
+                <div class="col-md-8">
+                    <input class="form-control bg-dark bg-gradient text-light" id="imageAlbumId" type="text"
+                        placeholder="Album Id" formControlName="albumId" />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="imageTitleId">Image title</label>
+
+                <div class="col-md-8">
+                    <input class="form-control bg-dark bg-gradient text-light" id="imageTitleId" type="text"
+                        placeholder="Title" formControlName="title" />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="imageUrlId">Image url</label>
+
+                <div class="col-md-8">
+                    <input class="form-control bg-dark bg-gradient text-light" id="imageUrlId" type="text"
+                        placeholder="Image Url" formControlName="url" />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="imageThumbnailId">Thumbnail url</label>
+
+                <div class="col-md-8">
+                    <input class="form-control bg-dark bg-gradient text-light" id="imageThumbnailId"
+                        placeholder="Thumbnail url" formControlName="thumbnailUrl" />
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+
+                <div class="offset-md-2 col-md-4">
+
+                    <button class="btn btn-outline-primary text-light" style="width:80px; margin-right:20px;"
+                        type="submit" title="Save your entered data">
+                        Save
+                    </button>
+
+                    <button class="btn btn-outline-secondary text-light" style="width:80px;" type="button"
+                        title="Cancel your edits" [routerLink]="['/images']">
+                        Cancel
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row mt-5" *ngIf='images.length'>
+    <div class="col-md-3 mb-3" *ngFor="let image of images | paginate : {
+            itemsPerPage: pageSize,
+            currentPage: page,
+            totalItems: count
+          };">
+
+        <div class="card shadow-lg p-2 mb-2 bg-dark bg-gradient rounded">
+
+            <img class="card-img-top" *ngIf="image.thumbnailUrl" [routerLink]="['/images', image.id]"
+                [src]='image.thumbnailUrl'>
+
+            <div class="card-header text-light">
+                {{truncateTitle(image)}}
+            </div>
+
+        </div>
+
+    </div>
+    <div class="d-flex justify-content-center text-light">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" [responsive]="true"
+            (pageChange)="handlePageChange($event)"></pagination-controls>
+    </div>
+</div>
+
+
+
+<div class="row d-flex justify-content-center" *ngIf='!images.length'>
+    <div class="loader"></div>
+</div>

@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'micro-insta'`, () => {
+  it(`should have as title 'Mini-Insta'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('micro-insta');
+    expect(app.pageTitle).toEqual('Mini-Insta');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('micro-insta app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Mini-Insta app is running!');
   });
 });
